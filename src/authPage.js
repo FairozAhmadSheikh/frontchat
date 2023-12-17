@@ -91,8 +91,7 @@ const AuthPage = (props) => {
           <button type="submit">SIGN UP</button>
         </form>
         {/* Star Button */}
-        <button className="Banner" onClick={redirectToGit} >
-        <img src={githubIcon} alt="GitHub Icon" className="github-icon" />Give Me A Star</button>
+        <button className="Banner" onClick={redirectToGit} >Give Me A Star</button>
         
       </div>
 
@@ -103,11 +102,6 @@ const AuthPage = (props) => {
       input { width: calc(100% - 16px); margin-top: 12px; padding: 8px; background-color: #e6f7ff; outline: none; border: 1px solid #e6f7ff; }
       button { margin-top: 12px; width: 100%; padding: 8px; }
       .Banner{margin-top: 12px; width: 100%; padding: 8px;
-      }
-      .github-icon {
-        width: 20px; /* Set the width of the image */
-        height:20px; /* Set the height of the image */
-        margin-right: 18px; /* Adjust the margin as needed */
       }
       `}</style>
     </div>
