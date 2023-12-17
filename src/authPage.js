@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import githubIcon from "./githubIcon.png"
 
 const AuthPage = (props) => {
   const [username, setUsername] = useState();
@@ -29,6 +30,9 @@ const AuthPage = (props) => {
       .then((r) => props.onAuth({ ...r.data, secret })) // NOTE: over-ride secret
       .catch((e) => console.log(JSON.stringify(e.response.data)));
   };
+  const redirectToGit=()=>{
+    window.location.href = "https://github.com/FairozAhmadSheikh/frontchat/stargazers";
+  }
 
   return (
     <div className="login-page">
@@ -86,6 +90,10 @@ const AuthPage = (props) => {
           />
           <button type="submit">SIGN UP</button>
         </form>
+        {/* Star Button */}
+        <button className="Banner" onClick={redirectToGit} >
+        <img src={githubIcon} alt="GitHub Icon" className="github-icon" />Give Me A Star</button>
+        
       </div>
 
       <style>{`
@@ -94,6 +102,13 @@ const AuthPage = (props) => {
       .title { padding-top: 32px; font-size: 22px; color: white; font-weight: 700; }
       input { width: calc(100% - 16px); margin-top: 12px; padding: 8px; background-color: #e6f7ff; outline: none; border: 1px solid #e6f7ff; }
       button { margin-top: 12px; width: 100%; padding: 8px; }
+      .Banner{margin-top: 12px; width: 100%; padding: 8px;
+      }
+      .github-icon {
+        width: 20px; /* Set the width of the image */
+        height:20px; /* Set the height of the image */
+        margin-right: 18px; /* Adjust the margin as needed */
+      }
       `}</style>
     </div>
   );
